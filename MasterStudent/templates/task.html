@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+.background {
+  background-image: url("https://r4.wallpaperflare.com/wallpaper/622/626/517/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-c5ef898a5eca0c1c821e44d7ca4323ba.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<body class="background">
+<h2 align="center">Task's Menu</h2>
+</body>
+<form action="taskdata" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>First Number :</td>
+            <td><select name="ddlfno">
+                <option>select</option>
+                <option>Zero</option>
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+                <option>Four</option>
+                <option>Five</option>
+                <option>Six</option>
+                <option>Seven</option>
+                <option>Eight</option>
+                <option>Nine</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Second Number:</td>
+            <td><select name="ddlsno">
+                <option>select</option>
+                <option>Zero</option>
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+                <option>Four</option>
+                <option>Five</option>
+                <option>Six</option>
+                <option>Seven</option>
+                <option>Eight</option>
+                <option>Nine</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Operation :</td>
+            <td><select name="ddlop">
+                <option>select</option>
+                <option>Plus</option>
+                <option>Times</option>
+                <option>Minus</option>
+                <option>Divided_by</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Student</td>
+            <td><select name="ddlstd">
+                {% for i in data %}
+                <option>{{i.S_Name}}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="btnsub" value="Assign"></td>
+        </tr>
+    </table>
+    {{s}}
+</form>
+</html>

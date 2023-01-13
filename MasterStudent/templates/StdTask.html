@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+.background {
+  background-image: url("https://r4.wallpaperflare.com/wallpaper/158/774/427/anime-studio-ghibli-spirited-away-wallpaper-162f03a594ef91dbe5dab6d1f985995d.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<body class="background">
+<h2 align="center">Assignments</h2>
+<form>
+  <table border="2" align="center">
+    <tr>
+      <th>Left</th>
+      <th>Operator</th>
+      <th>Right</th>
+      <th>Status</th>
+      <th>Solve</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.Left}}</td>
+      <td>{{i.Operation}}</td>
+      <td>{{i.Right}}</td>
+      <td>{% if i.Status == True %}
+        completed
+        {%else%}
+        notcompleted
+        {% endif %}
+      </td>
+      <td><a href="{% url 'sol' i.id %}">Solve</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  <h2>{{ res }}</h2>
+</form>
+
+</body>
+</html>
