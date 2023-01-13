@@ -1,0 +1,2 @@
+# MasterStudentAssignment
+django project 
